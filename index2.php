@@ -25,7 +25,7 @@
                     <a href="/starcitizen">Star Citizen</a>
                 </li>
                 <li>
-                    <a href="/starcitizen">Typhon</a>
+                    <a href="/starcitizen">Typhon Ltd</a>
                 </li>
                 <li>
                     <a href="/starcitizen">Paradigm</a>
