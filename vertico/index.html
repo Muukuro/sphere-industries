@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  KeyShot VR
+  (c) Copyright 2012-2013 Luxion ApS - All Rights Reserved.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml' xml:lang='en_US' lang='en_US'>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>KeyShotVR</title>
+    <style type="text/css">
+      body { -ms-touch-action: none; }
+    </style>
+    <script language="JavaScript" type="text/javascript" src="Vertico/files/KeyShotVR.js"></script>
+    <script language="JavaScript" type="text/javascript">
+      var keyshotVR;
+
+      function initKeyShotVR() {
+        var nameOfDiv = "Vertico";
+        var folderName = "Vertico";
+        var imageWidth = 1000;
+        var imageHeight = 582;
+        var backgroundColor = "#8f97aa";
+        var uCount = 22;
+        var vCount = 9;
+        var uWrap = true;
+        var vWrap = false;
+        var uMouseSensitivity = -0.061111;
+        var vMouseSensitivity = 0.100000;
+        var uStartIndex = 11;
+        var vStartIndex = 4;
+        var minZoom = 1.000000;
+        var maxZoom = 1.000000;
+        var rotationDamping = 0.960000;
+        var windowResizable = true;
+        var addResizableGUIButton = false;
+        var addPlayGUIButton = true;
+        var imageExtension = "jpg";
+        var showLoading = true;
+        var loadingIcon = "ks_logo.png"; // Set to empty string for default icon.
+        var allowFullscreen = true; // Double-click in desktop browsers for fullscreen.
+
+        keyshotVR = new keyshotVR(nameOfDiv,folderName,imageWidth,imageHeight,backgroundColor,uCount,vCount,uWrap,vWrap,uMouseSensitivity,vMouseSensitivity,uStartIndex,vStartIndex,minZoom,maxZoom,rotationDamping,windowResizable,addResizableGUIButton,addPlayGUIButton,imageExtension,showLoading,loadingIcon,allowFullscreen);
+      }
+
+      window.onload = initKeyShotVR;
+    </script>
+  </head>
+  <body oncontextmenu="return false;">
+    <div id="Vertico"></div> 
+  </body>
+</html>

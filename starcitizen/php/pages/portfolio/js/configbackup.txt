@@ -1,0 +1,51 @@
+							// Resize items
+								var w = 0, iw;
+								var rowStart = 0, rowPos = 0, rowEnded = false;
+								
+								_.objects.items.each(function(i) {
+									var $item = $(this);
+									
+									iw = $item.data('width');
+									
+									// Determine end row conditions
+										// Current item would push us past the row width
+											if (w + iw >= rowWidth)
+											{
+												rowEnded = true;
+												rowEnd = i - 1;
+											}
+										// Current item is the last item
+											else if (i + 1 >= itemCount)
+											{
+												w += iw;
+												rowEnded = true;
+												rowEnd = i;
+											}
+									
+									// Did the row end?
+										if (rowEnded)
+										{
+											var pt = 0;
+											
+											// Rescale the row's items
+												_.objects.items.slice(rowStart, rowEnd + 1).each(function(j) {
+													var $item = $(this);
+													var p = (($item.data('width') / w) * 100.00);
+													
+													if (pt + p > 100.00
+													||	( (rowStart + j) == rowEnd && pt + p < 100.00))
+														 p = 100.00 - pt;
+
+													$item.css('width', p + '%');
+													pt += p;
+													
+												});
+											
+											w = 0;
+											rowStart = i;
+											rowPos++;
+											rowEnded = false;
+										}
+									
+									w += iw;
+								});
