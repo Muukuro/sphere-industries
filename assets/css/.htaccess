@@ -1,3 +1,0 @@
-RewriteEngine on
-
-RewriteRule ^style.css$										"minify.php" [L,QSA]
